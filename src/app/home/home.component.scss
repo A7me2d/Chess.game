@@ -1,0 +1,42 @@
+.chess-board {
+  display: inline-block;
+  border: 8px solid #ffd700;
+  box-shadow: 0 0 40px #222;
+  margin: 40px auto;
+  background: #222;
+}
+.chess-row {
+  display: flex;
+}
+.chess-square {
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4.2rem;
+  cursor: pointer;
+  transition: box-shadow 0.2s, background 0.2s;
+  border: 2px solid #bfa43a;
+}
+.chess-square.gold {
+  background: linear-gradient(135deg, #ffe082 80%, #ffd700 100%);
+}
+.chess-square.black {
+  background: linear-gradient(135deg, #181818 80%, #444 100%);
+}
+.chess-square.selected {
+  box-shadow: 0 0 0 8px #ffd700 inset, 0 0 24px #ffd700;
+  z-index: 2;
+}
+.piece {
+  font-weight: bold;
+}
+.piece.white {
+  color: #ffd700;
+  text-shadow: 2px 2px 8px #000, 0 0 16px #bfa43a;
+}
+.piece.black {
+  color: #e0e0e0;
+  text-shadow: 2px 2px 8px #222, 0 0 16px #888;
+}
