@@ -1,14 +1,18 @@
-<button class="swap-btn" (click)="swapKingQueen()">عكس مكان الملك والوزير</button>
-<button class="swap-btn" (click)="playAsBlackOnce()">العب مكان الكمبيوتر مرة واحدة</button>
-<div class="chess-board">
-    <div *ngFor="let row of board; let i = index" class="chess-row">
-        <div *ngFor="let square of board[board.length - 1 - i]; let j = index" class="chess-square" [ngClass]="{
-           'black': ((board.length - 1 - i) + j) % 2 === 1,
-           'gold': ((board.length - 1 - i) + j) % 2 === 0,
-           'selected': selected && selected.row === (board.length - 1 - i) && selected.col === j
-         }" (click)="selectSquare(board.length - 1 - i, j)">
-            <span class="piece" [ngClass]="square && square[0] === 'w' ? 'white' : (square ? 'black' : '')">{{
-                getPieceUnicode(square) }}</span>
+<div class="chess-container">
+    <div class="controls">
+        <button class="control-btn" (click)="swapKingQueen()">عكس مكان الملك والوزير</button>
+        <button class="control-btn" (click)="playAsBlackOnce()">العب مكان الكمبيوتر مرة واحدة</button>
+    </div>
+    <div class="chess-board">
+        <div *ngFor="let row of board; let i = index" class="chess-row">
+            <div *ngFor="let square of board[board.length - 1 - i]; let j = index" class="chess-square" [ngClass]="{
+               'black': ((board.length - 1 - i) + j) % 2 === 1,
+               'gold': ((board.length - 1 - i) + j) % 2 === 0,
+               'selected': selected && selected.row === (board.length - 1 - i) && selected.col === j
+             }" (click)="selectSquare(board.length - 1 - i, j)">
+                <span class="piece" [ngClass]="square && square[0] === 'w' ? 'white' : (square ? 'black' : '')">{{
+                    getPieceUnicode(square) }}</span>
+            </div>
         </div>
     </div>
 </div>

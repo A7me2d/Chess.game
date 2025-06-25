@@ -171,7 +171,7 @@ export class HomeComponent {
 
   computerMove() {
     // استخدم MiniMax لاختيار أفضل حركة للأسود
-    const best = this.findBestMove('b', 6); // عمق 6 (أقوى)
+    const best = this.findBestMove('b', 3); // عمق 6 (أقوى)
     if (!best) return;
     const {fromRow, fromCol, toRow, toCol} = best;
     const piece = this.board[fromRow][fromCol];
